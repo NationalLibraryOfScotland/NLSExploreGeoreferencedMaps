@@ -347,7 +347,7 @@
         tileOptions: {crossOriginKeyword: null}    
     });
 
-    var oneinchseventh = new OpenLayers.Layer.OSM("Great Britain, OS One Inch, 1955-61", "http://geo.nls.uk/mapdata2/os/seventh/${z}/${x}/${y}.png",
+    var engwalesnewpop = new OpenLayers.Layer.OSM("England and Wales, OS One Inch, 1945-47", "http://geo.nls.uk/maps/os/newpopular/${z}/${x}/${y}.png",
     {
         numZoomLevels: 16,
         backgroundColor: '#eee',
@@ -359,11 +359,6 @@
         tileOptions: {crossOriginKeyword: null}
     });
 	
-    oneinchseventh.getXYZ = function ( bounds ) {
-      var xyz = OpenLayers.Layer.OSM.prototype.getXYZ.apply(this, arguments);
-      xyz['y'] = (Math.pow(2, xyz['z'])-xyz['y']-1);
-      return xyz;
-    }
 
    var irelandbart = new OpenLayers.Layer.OSM("Ireland, Bartholomew Quarter-Inch, 1940", "http://geo.nls.uk/maps/ireland/bartholomew/${z}/${x}/${y}.png",
     {
@@ -384,7 +379,7 @@
 
 // Add all overlay layers
 
-    map.addLayers([oneinchpopular, oneinchseventh, irelandbart]);
+    map.addLayers([oneinchpopular, engwalesnewpop, irelandbart]);
 
 // Initialize our baselayer + overlay switcher
 
